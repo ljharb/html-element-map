@@ -1,0 +1,28 @@
+{
+	"name": "html-element-map",
+	"version": "0.0.0",
+	"description": "Look up HTML tag names via HTML Element constructors, and vice versa.",
+	"main": "index.js",
+	"scripts": {
+		"test": "node test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ljharb/html-element-map.git"
+	},
+	"keywords": [
+		"html",
+		"element",
+		"tag",
+		"lookup",
+		"html",
+		"element",
+		"constructor"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ljharb/html-element-map/issues"
+	},
+	"homepage": "https://github.com/ljharb/html-element-map#readme"
+}
