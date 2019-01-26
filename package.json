@@ -4,11 +4,13 @@
 	"description": "Look up HTML tag names via HTML Element constructors, and vice versa.",
 	"main": "index.js",
 	"scripts": {
+		"pretest": "npm run lint",
 		"test": "node test",
 		"posttest": "npm run audit",
 		"preaudit": "npm install --package-lock --package-lock-only",
 		"audit": "npm audit",
-		"postaudit": "rm package-lock.json"
+		"postaudit": "rm package-lock.json",
+		"lint": "eslint ."
 	},
 	"repository": {
 		"type": "git",
@@ -28,5 +30,9 @@
 	"bugs": {
 		"url": "https://github.com/ljharb/html-element-map/issues"
 	},
-	"homepage": "https://github.com/ljharb/html-element-map#readme"
+	"homepage": "https://github.com/ljharb/html-element-map#readme",
+	"devDependencies": {
+		"@ljharb/eslint-config": "^13.1.1",
+		"eslint": "^5.12.1"
+	}
 }
