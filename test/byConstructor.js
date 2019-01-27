@@ -9,8 +9,6 @@ var getData = require('../getData');
 test('byConstructor()', function (t) {
 	t.equal(typeof byConstructor, 'function', 'is a function');
 
-	t['throws'](function () { byConstructor(); }, 'requires a constructor');
-
 	t.test('with an actual constructor', { skip: typeof HTMLDivElement === 'undefined' }, function (st) {
 		var items = byConstructor(HTMLDivElement);
 
