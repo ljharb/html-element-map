@@ -1,4 +1,10 @@
 {
 	"root": true,
-	"extends": "@ljharb"
+	"extends": "@ljharb",
+	"env": {
+		"browser": true,
+	},
+	"rules": {
+		"array-bracket-newline": 0,
+	},
 }
