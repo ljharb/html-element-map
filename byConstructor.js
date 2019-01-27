@@ -3,9 +3,6 @@
 var filter = require('array-filter');
 var getData = require('./getData');
 
-var toStr = Object.prototype.toString;
-var hasToStringTag = typeof Symbol === 'function' && Symbol.toStringTag;
-
 module.exports = function byConstructor(constructor) {
 	if (!constructor) {
 		return [];
