@@ -21,7 +21,7 @@ var expecteds = [
 	['HTMLElement', 'rb'],
 	['HTMLElement', 'spacer'],
 	['HTMLAnchorElement', 'a'],
-	['HTMLAppletElement', 'applet'],
+	// ['HTMLAppletElement', 'applet'], // commented out due to IE 11 java update popup
 	['HTMLAreaElement', 'area'],
 	['HTMLAudioElement', 'audio'],
 	['HTMLBaseElement', 'base'],
