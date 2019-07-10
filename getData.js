@@ -60,6 +60,7 @@ var expecteds = [
 	['HTMLLegendElement', 'legend'],
 	['HTMLLIElement', 'li'],
 	['HTMLLinkElement', 'link'],
+	['HTMLElement', 'main'], // in IE 9-11, this is HTMLUnknownElement
 	['HTMLMapElement', 'map'],
 	['HTMLMarqueeElement', 'marquee'],
 	['HTMLMenuElement', 'menu'],
