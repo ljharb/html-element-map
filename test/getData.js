@@ -8,6 +8,8 @@ var inspect = require('object-inspect');
 
 var getData = require('../getData');
 
+var htmlElement = /^HTMLElement(?:Constructor)?$/g;
+
 var testConstructor = function testConstructorTag(t, constructor, tag, name, desc) {
 	if (!constructor) {
 		t.equal(typeof constructor, 'undefined', desc + ' does not exist');
@@ -18,8 +20,12 @@ var testConstructor = function testConstructorTag(t, constructor, tag, name, des
 		t.equal(typeof constructor, 'object', desc + ' is type "object"');
 
 		var objName = Object.prototype.toString.call(constructor).slice(8, -1);
-		if (objName === name || (objName !== 'HTMLElement' && name !== 'HTMLElement')) {
-			t.equal(objName, name, desc + ' toString [[Class]] matches constructorName');
+		if (objName === name || (htmlElement.test(objName) && htmlElement.test(name))) {
+			if (objName === name + 'Constructor') { // Safari 5.1
+				t.equal(objName, name + 'Constructor', desc + ' toString [[Class]] matches constructorName + Constructor');
+			} else {
+				t.equal(objName, name, desc + ' toString [[Class]] matches constructorName');
+			}
 		}
 	} if (typeof constructor === 'function') {
 		t.equal(typeof constructor, 'function', desc + ' is a function');
@@ -52,6 +58,7 @@ test('getData()', function (t) {
 	t.test('all the elements', function (st) {
 		forEach(data.elements, function (item) {
 			st.test(inspect(item), function (s2t) {
+				s2t.comment(item.tag);
 				s2t.equal(typeof item.tag, 'string', 'tag is a string');
 				s2t.ok(item.tag, 'tag is not empty');
 

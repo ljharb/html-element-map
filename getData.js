@@ -11,28 +11,28 @@ var map = function (arr, mapper) {
 var expecteds = [
 	['HTMLElement', 'article'],
 	['HTMLElement', 'section'],
-	['HTMLBaseFontElement', 'basefont'],
-	['HTMLPhraseElement', 'cite'],
+	['HTMLBaseFontElement', 'basefont', 'HTMLBaseFontElementConstructor'], // Safari 5.1
+	['HTMLPhraseElement', 'cite', 'HTMLElement'], // Safari 5.1
 	['HTMLElement', 'noscript'],
-	['HTMLBGSoundElement', 'bgsound'],
-	['HTMLPhraseElement', 'blink'],
+	['HTMLBGSoundElement', 'bgsound', 'HTMLElement'], // Safari 5.1
+	['HTMLPhraseElement', 'blink', 'HTMLElement'], // Safari 5.1
 	['HTMLElement', 'multicol'],
-	['HTMLNextIdElement', 'nextid'],
+	['HTMLNextIdElement', 'nextid', 'HTMLElement'], // Safari 5.1
 	['HTMLElement', 'rb'],
 	['HTMLElement', 'spacer'],
-	['HTMLAnchorElement', 'a'],
+	['HTMLAnchorElement', 'a', 'HTMLElement'], // Safari 5.1
 	// ['HTMLAppletElement', 'applet'], // commented out due to IE 11 java update popup
-	['HTMLAreaElement', 'area'],
-	['HTMLAudioElement', 'audio'],
-	['HTMLBaseElement', 'base'],
-	['HTMLBodyElement', 'body'],
-	['HTMLBRElement', 'br'],
+	['HTMLAreaElement', 'area', 'HTMLElement'], // Safari 5.1
+	['HTMLAudioElement', 'audio', 'HTMLElement'], // Safari 5.1
+	['HTMLBaseElement', 'base', 'HTMLElement'], // Safari 5.1
+	['HTMLBodyElement', 'body', 'HTMLElement'], // Safari 5.1
+	['HTMLBRElement', 'br', 'HTMLElement'], // Safari 5.1
 	['HTMLButtonElement', 'button'],
 	['HTMLCanvasElement', 'canvas'],
-	['HTMLContentElement', 'content'],
-	['HTMLDataElement', 'data'],
+	['HTMLContentElement', 'content', 'HTMLElement'], // Safari 5.1
+	['HTMLDataElement', 'data', 'HTMLElement'], // Safari 5.1
 	['HTMLDataListElement', 'datalist'],
-	['HTMLDialogElement', 'dialog'],
+	['HTMLDialogElement', 'dialog', 'HTMLElement'], // Safari 5.1
 	['HTMLDirectoryElement', 'dir'],
 	['HTMLDivElement', 'div'],
 	['HTMLDListElement', 'dl'],
@@ -54,7 +54,7 @@ var expecteds = [
 	['HTMLIFrameElement', 'iframe'],
 	['HTMLImageElement', 'img'],
 	['HTMLInputElement', 'input'],
-	['HTMLIsIndexElement', 'index'], // in HTML5, this is HTMLUnknownElement
+	['HTMLIsIndexElement', 'index', 'HTMLElement'], // in HTML5, this is HTMLUnknownElement (Safari 5.1 for HTMLElement)
 	['HTMLKeygenElement', 'keygen', 'HTMLBlockElement'],
 	['HTMLLabelElement', 'label'],
 	['HTMLLegendElement', 'legend'],
@@ -65,7 +65,7 @@ var expecteds = [
 	['HTMLMarqueeElement', 'marquee'],
 	['HTMLMenuElement', 'menu'],
 	['HTMLMetaElement', 'meta'],
-	['HTMLMeterElement', 'meter'],
+	['HTMLMeterElement', 'meter', 'HTMLElement'], // Safari 5.1
 	['HTMLModElement', 'del'],
 	['HTMLModElement', 'ins'],
 	['HTMLObjectElement', 'object'],
@@ -75,17 +75,16 @@ var expecteds = [
 	['HTMLOutputElement', 'output'],
 	['HTMLParagraphElement', 'p'],
 	['HTMLParamElement', 'param'],
-	['HTMLPictureElement', 'picture'],
+	['HTMLPictureElement', 'picture', 'HTMLElement'], // Safari 5.1
 	['HTMLPreElement', 'pre'],
-	['HTMLProgressElement', 'progress'],
-	['HTMLQuoteElement', 'q'],
-	['HTMLQuoteElement', 'blockquote', 'HTMLBlockElement'],
+	['HTMLProgressElement', 'progress', 'HTMLElement'], // Safari 5.1
+	['HTMLQuoteElement', 'q', 'HTMLBlockquoteElement'], // Safari 5.1
+	['HTMLQuoteElement', 'blockquote', 'HTMLBlockElement', 'HTMLBlockquoteElement'], // Safari 5.1
 	['HTMLScriptElement', 'script'],
-	['HTMLPictureElement', 'picture'],
 	['HTMLSelectElement', 'select'],
-	['HTMLShadowElement', 'shadow'],
+	['HTMLShadowElement', 'shadow', 'HTMLElement'], // Safari 5.1
 	['HTMLSourceElement', 'source'],
-	['HTMLSpanElement', 'span'],
+	['HTMLSpanElement', 'span', 'HTMLElement'], // Safari 5.1
 	['HTMLStyleElement', 'style'],
 	['HTMLTableElement', 'table'],
 	['HTMLTableCaptionElement', 'caption'],
@@ -97,13 +96,46 @@ var expecteds = [
 	['HTMLTableSectionElement', 'tbody'],
 	['HTMLTableSectionElement', 'thead'],
 	['HTMLTableSectionElement', 'tfoot'],
-	['HTMLTemplateElement', 'template'],
+	['HTMLTemplateElement', 'template', 'HTMLElement'], // Safari 5.1
 	['HTMLTextAreaElement', 'textarea'],
-	['HTMLTimeElement', 'time'],
+	['HTMLTimeElement', 'time', 'HTMLElement'], // Safari 5.1
 	['HTMLTitleElement', 'title'],
-	['HTMLTrackElement', 'track'],
+	['HTMLTrackElement', 'track', 'HTMLElement'], // Safari 5.1
 	['HTMLUListElement', 'ul'],
-	['HTMLVideoElement', 'video']
+	['HTMLVideoElement', 'video'],
+	['HTMLElement', 'abbr'],
+	['HTMLElement', 'address'],
+	['HTMLElement', 'aside'],
+	['HTMLElement', 'b'],
+	['HTMLElement', 'bdi'],
+	['HTMLElement', 'bdo'],
+	['HTMLElement', 'code'],
+	['HTMLElement', 'dd'],
+	['HTMLDetailsElement', 'details', 'HTMLElement'], // Safari 5.1
+	['HTMLElement', 'dfn'],
+	['HTMLElement', 'dt'],
+	['HTMLElement', 'em'],
+	['HTMLElement', 'figcaption'],
+	['HTMLElement', 'figure'],
+	['HTMLElement', 'footer'],
+	['HTMLElement', 'header'],
+	['HTMLElement', 'hgroup'],
+	['HTMLElement', 'i'],
+	['HTMLElement', 'kbd'],
+	['HTMLElement', 'mark'],
+	['HTMLElement', 'nav'],
+	['HTMLElement', 'rp'],
+	['HTMLElement', 'rt'],
+	['HTMLElement', 'ruby'],
+	['HTMLElement', 's'],
+	['HTMLElement', 'samp'],
+	['HTMLSlotElement', 'slot', 'HTMLElement'], // Safari 5.1
+	['HTMLElement', 'small'],
+	['HTMLElement', 'strong'],
+	['HTMLElement', 'summary'],
+	['HTMLElement', 'u'],
+	['HTMLElement', 'var'],
+	['HTMLElement', 'wbr']
 ];
 
 // eslint-disable-next-line consistent-return, max-params
@@ -123,9 +155,13 @@ module.exports = function getData() {
 		elements: map(expecteds, function (expected) {
 			var constructorName = expected[0];
 			var tag = expected[1];
-			var alternate = expected[2];
+			var alternate;
+			var altConstructor;
+			for (var i = 2; i < arguments.length && !altConstructor; i += 1) {
+				alternate = expected[i];
+				altConstructor = alternate && global[alternate];
+			}
 			var constructor = global[constructorName];
-			var altConstructor = alternate && global[alternate];
 
 			return {
 				constructor: getConstructor(tag, altConstructor || constructor, unknown),
