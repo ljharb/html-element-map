@@ -3,6 +3,29 @@
 	"version": "1.2.0",
 	"description": "Look up HTML tag names via HTML Element constructors, and vice versa.",
 	"main": "index.js",
+	"exports": {
+		".": [
+			{
+				"default": "./index.js"
+			},
+			"./index.js"
+		],
+		"./": "./index.js",
+		"./index": "./index.js",
+		"./index.js": "./index.js",
+		"./byTag": "./byTag.js",
+		"./byTag.js": "./byTag.js",
+		"./byConstructor": "./byConstructor.js",
+		"./byConstructor.js": "./byConstructor.js",
+		"./byConstructorName": "./byConstructorName.js",
+		"./byConstructorName.js": "./byConstructorName.js",
+		"./getData": "./getData.js",
+		"./getData.js": "./getData.js",
+		"./package": "./package.json",
+		"./package.json": "./package.json",
+		"./test": "./test/index.js",
+		"./test/": "./test/"
+	},
 	"scripts": {
 		"prepublish": "safe-publish-latest",
 		"pretest": "npm run lint",
