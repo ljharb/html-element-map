@@ -1,6 +1,6 @@
 'use strict';
 
-var filter = require('array-filter');
+var filter = require('array.prototype.filter');
 var getData = require('./getData');
 
 module.exports = function byConstructor(constructor) {

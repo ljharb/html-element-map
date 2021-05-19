@@ -94,7 +94,7 @@
 		"tape": "^5.2.2"
 	},
 	"dependencies": {
-		"array-filter": "^1.0.0",
+		"array.prototype.filter": "^1.0.0",
 		"call-bind": "^1.0.2"
 	},
 	"testling": {
