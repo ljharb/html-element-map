@@ -1,14 +1,15 @@
-# html-element-map <sup>[![Version Badge][2]][1]</sup>
-Look up HTML tag names via HTML Element constructors, and vice versa.
+# html-element-map <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
 [![github actions][actions-image]][actions-url]
 [![coverage][codecov-image]][codecov-url]
-[![dependency status][5]][6]
-[![dev dependency status][7]][8]
+[![dependency status][deps-svg]][deps-url]
+[![dev dependency status][dev-deps-svg]][dev-deps-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
 
-[![npm badge][11]][1]
+[![npm badge][npm-badge-png]][package-url]
+
+Look up HTML tag names via HTML Element constructors, and vice versa.
 
 ## Entry points
 
@@ -69,13 +70,13 @@ assert.deepEqual(
 );
 ```
 
-[1]: https://npmjs.org/package/html-element-map
-[2]: https://versionbadg.es/ljharb/html-element-map.svg
-[5]: https://david-dm.org/ljharb/html-element-map.svg
-[6]: https://david-dm.org/ljharb/html-element-map
-[7]: https://david-dm.org/ljharb/html-element-map/dev-status.svg
-[8]: https://david-dm.org/ljharb/html-element-map#info=devDependencies
-[11]: https://nodei.co/npm/html-element-map.png?downloads=true&stars=true
+[package-url]: https://npmjs.org/package/html-element-map
+[npm-version-svg]: https://versionbadg.es/ljharb/html-element-map.svg
+[deps-svg]: https://david-dm.org/ljharb/html-element-map.svg
+[deps-url]: https://david-dm.org/ljharb/html-element-map
+[dev-deps-svg]: https://david-dm.org/ljharb/html-element-map/dev-status.svg
+[dev-deps-url]: https://david-dm.org/ljharb/html-element-map#info=devDependencies
+[npm-badge-png]: https://nodei.co/npm/html-element-map.png?downloads=true&stars=true
 [license-image]: https://img.shields.io/npm/l/html-element-map.svg
 [license-url]: LICENSE
 [downloads-image]: https://img.shields.io/npm/dm/html-element-map.svg
