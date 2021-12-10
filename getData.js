@@ -142,7 +142,7 @@ var expecteds = [
 	['HTMLElement', 'wbr']
 ];
 
-// eslint-disable-next-line consistent-return, max-params
+// eslint-disable-next-line consistent-return
 var getConstructor = function getTagConstructor(tag, constructor, unknown) {
 	if (typeof document !== 'undefined' && typeof document.createElement === 'function') {
 		var actual = document.createElement(tag).constructor;
