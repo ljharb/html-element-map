@@ -15,29 +15,11 @@
 		"./": "./index.js",
 		"./index": "./index.js",
 		"./index.js": "./index.js",
-		"./byTag": [
-			{
-				"import": "./byTag.mjs",
-				"default": "./byTag.js"
-			},
-			"./byTag.js"
-		],
+		"./byTag": "./byTag.js",
 		"./byTag.js": "./byTag.js",
-		"./byConstructor": [
-			{
-				"import": "./byConstructor.mjs",
-				"default": "./byConstructor.js"
-			},
-			"./byConstructor.js"
-		],
+		"./byConstructor": "./byConstructor.js",
 		"./byConstructor.js": "./byConstructor.js",
-		"./byConstructorName": [
-			{
-				"import": "./byConstructorName.mjs",
-				"default": "./byConstructorName.js"
-			},
-			"./byConstructorName.js"
-		],
+		"./byConstructorName": "./byConstructorName.js",
 		"./byConstructorName.js": "./byConstructorName.js",
 		"./getData": "./getData.js",
 		"./getData.js": "./getData.js",

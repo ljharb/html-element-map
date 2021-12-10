@@ -9,9 +9,9 @@ test('named exports', async (t) => {
 	);
 
 	const { byTag, byConstructor, byConstructorName } = Module;
-	t.equal(await import('html-element-map/byTag'), byTag, 'byTag named export matches deep export');
-	t.equal(await import('html-element-map/byConstructor'), byConstructor, 'byConstructor named export matches deep export');
-	t.equal(await import('html-element-map/byConstructorName'), byConstructorName, 'byConstructorName named export matches deep export');
+	t.equal((await import('html-element-map/byTag')).default, byTag, 'byTag named export matches deep export');
+	t.equal((await import('html-element-map/byConstructor')).default, byConstructor, 'byConstructor named export matches deep export');
+	t.equal((await import('html-element-map/byConstructorName')).default, byConstructorName, 'byConstructorName named export matches deep export');
 
 	t.end();
 });
