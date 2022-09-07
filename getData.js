@@ -13,22 +13,13 @@ var map = function (arr, mapper) {
 };
 
 var expecteds = [
-	['HTMLElement', 'article'],
-	['HTMLElement', 'section'],
-	['HTMLBaseFontElement', 'basefont', 'HTMLBaseFontElementConstructor'], // Safari 5.1
-	['HTMLPhraseElement', 'cite', 'HTMLElement'], // Safari 5.1
-	['HTMLElement', 'noscript'],
-	['HTMLBGSoundElement', 'bgsound', 'HTMLElement'], // Safari 5.1
-	['HTMLPhraseElement', 'blink', 'HTMLElement'], // Safari 5.1
-	['HTMLElement', 'multicol'],
-	['HTMLNextIdElement', 'nextid', 'HTMLElement'], // Safari 5.1
-	['HTMLElement', 'rb'],
-	['HTMLElement', 'spacer'],
 	['HTMLAnchorElement', 'a', 'HTMLElement'], // Safari 5.1
 	// ['HTMLAppletElement', 'applet'], // commented out due to IE 11 java update popup
 	['HTMLAreaElement', 'area', 'HTMLElement'], // Safari 5.1
 	['HTMLAudioElement', 'audio', 'HTMLElement'], // Safari 5.1
 	['HTMLBaseElement', 'base', 'HTMLElement'], // Safari 5.1
+	['HTMLBaseFontElement', 'basefont', 'HTMLBaseFontElementConstructor'], // Safari 5.1
+	['HTMLBGSoundElement', 'bgsound', 'HTMLElement'], // Safari 5.1
 	['HTMLBodyElement', 'body', 'HTMLElement'], // Safari 5.1
 	['HTMLBRElement', 'br', 'HTMLElement'], // Safari 5.1
 	['HTMLButtonElement', 'button'],
@@ -36,10 +27,61 @@ var expecteds = [
 	['HTMLContentElement', 'content', 'HTMLElement'], // Safari 5.1
 	['HTMLDataElement', 'data', 'HTMLElement'], // Safari 5.1
 	['HTMLDataListElement', 'datalist'],
+	['HTMLDetailsElement', 'details', 'HTMLElement'], // Safari 5.1
 	['HTMLDialogElement', 'dialog', 'HTMLElement'], // Safari 5.1
 	['HTMLDirectoryElement', 'dir'],
 	['HTMLDivElement', 'div'],
 	['HTMLDListElement', 'dl'],
+	['HTMLElement', 'abbr'],
+	['HTMLElement', 'acronym'],
+	['HTMLElement', 'address'],
+	['HTMLElement', 'article'],
+	['HTMLElement', 'aside'],
+	['HTMLElement', 'b'],
+	['HTMLElement', 'bdi'],
+	['HTMLElement', 'bdo'],
+	['HTMLElement', 'big'],
+	['HTMLElement', 'center'],
+	['HTMLElement', 'code'],
+	['HTMLElement', 'dd'],
+	['HTMLElement', 'dfn'],
+	['HTMLElement', 'dt'],
+	['HTMLElement', 'em'],
+	['HTMLElement', 'figcaption'],
+	['HTMLElement', 'figure'],
+	['HTMLElement', 'footer'],
+	['HTMLElement', 'header'],
+	['HTMLElement', 'hgroup'],
+	['HTMLElement', 'i'],
+	['HTMLElement', 'kbd'],
+	['HTMLElement', 'main'], // in IE 9-11, this is HTMLUnknownElement
+	['HTMLElement', 'mark'],
+	['HTMLElement', 'multicol'],
+	['HTMLElement', 'nav'],
+	['HTMLElement', 'nobr'],
+	['HTMLElement', 'noembed'],
+	['HTMLElement', 'noframes'],
+	['HTMLElement', 'noscript'],
+	['HTMLElement', 'plaintext'],
+	['HTMLElement', 'rb'],
+	['HTMLElement', 'rp'],
+	['HTMLElement', 'rt'],
+	['HTMLElement', 'rtc'],
+	['HTMLElement', 'ruby'],
+	['HTMLElement', 's'],
+	['HTMLElement', 'samp'],
+	['HTMLElement', 'section'],
+	['HTMLElement', 'small'],
+	['HTMLElement', 'spacer'],
+	['HTMLElement', 'strike'],
+	['HTMLElement', 'strong'],
+	['HTMLElement', 'sub'],
+	['HTMLElement', 'sup'],
+	['HTMLElement', 'summary'],
+	['HTMLElement', 'tt'],
+	['HTMLElement', 'u'],
+	['HTMLElement', 'var'],
+	['HTMLElement', 'wbr'],
 	['HTMLEmbedElement', 'embed'],
 	['HTMLFieldSetElement', 'fieldset'],
 	['HTMLFontElement', 'font'],
@@ -53,8 +95,8 @@ var expecteds = [
 	['HTMLHeadingElement', 'h4'],
 	['HTMLHeadingElement', 'h5'],
 	['HTMLHeadingElement', 'h6'],
-	['HTMLHtmlElement', 'html'],
 	['HTMLHRElement', 'hr'],
+	['HTMLHtmlElement', 'html'],
 	['HTMLIFrameElement', 'iframe'],
 	['HTMLImageElement', 'img'],
 	['HTMLInputElement', 'input'],
@@ -64,7 +106,6 @@ var expecteds = [
 	['HTMLLegendElement', 'legend'],
 	['HTMLLIElement', 'li'],
 	['HTMLLinkElement', 'link'],
-	['HTMLElement', 'main'], // in IE 9-11, this is HTMLUnknownElement
 	['HTMLMapElement', 'map'],
 	['HTMLMarqueeElement', 'marquee'],
 	['HTMLMenuElement', 'menu'],
@@ -72,6 +113,7 @@ var expecteds = [
 	['HTMLMeterElement', 'meter', 'HTMLElement'], // Safari 5.1
 	['HTMLModElement', 'del'],
 	['HTMLModElement', 'ins'],
+	['HTMLNextIdElement', 'nextid', 'HTMLElement'], // Safari 5.1
 	['HTMLObjectElement', 'object'],
 	['HTMLOListElement', 'ol'],
 	['HTMLOptGroupElement', 'optgroup'],
@@ -79,67 +121,49 @@ var expecteds = [
 	['HTMLOutputElement', 'output'],
 	['HTMLParagraphElement', 'p'],
 	['HTMLParamElement', 'param'],
+	['HTMLPhraseElement', 'blink', 'HTMLElement'], // Safari 5.1
+	['HTMLPhraseElement', 'cite', 'HTMLElement'], // Safari 5.1
 	['HTMLPictureElement', 'picture', 'HTMLElement'], // Safari 5.1
+	['HTMLPreElement', 'listing'],
 	['HTMLPreElement', 'pre'],
+	['HTMLPreElement', 'xmp'],
 	['HTMLProgressElement', 'progress', 'HTMLElement'], // Safari 5.1
-	['HTMLQuoteElement', 'q', 'HTMLBlockquoteElement'], // Safari 5.1
 	['HTMLQuoteElement', 'blockquote', 'HTMLBlockElement', 'HTMLBlockquoteElement'], // Safari 5.1
+	['HTMLQuoteElement', 'q', 'HTMLBlockquoteElement'], // Safari 5.1
 	['HTMLScriptElement', 'script'],
 	['HTMLSelectElement', 'select'],
 	['HTMLShadowElement', 'shadow', 'HTMLElement'], // Safari 5.1
+	['HTMLSlotElement', 'slot', 'HTMLElement'], // Safari 5.1
 	['HTMLSourceElement', 'source'],
 	['HTMLSpanElement', 'span', 'HTMLElement'], // Safari 5.1
 	['HTMLStyleElement', 'style'],
-	['HTMLTableElement', 'table'],
 	['HTMLTableCaptionElement', 'caption'],
 	['HTMLTableCellElement', 'td', 'HTMLTableDataCellElement'],
 	['HTMLTableCellElement', 'th', 'HTMLTableHeaderCellElement'],
-	['HTMLTableRowElement', 'tr'],
 	['HTMLTableColElement', 'col'],
 	['HTMLTableColElement', 'colgroup'],
+	['HTMLTableElement', 'table'],
+	['HTMLTableRowElement', 'tr'],
 	['HTMLTableSectionElement', 'tbody'],
-	['HTMLTableSectionElement', 'thead'],
 	['HTMLTableSectionElement', 'tfoot'],
+	['HTMLTableSectionElement', 'thead'],
 	['HTMLTemplateElement', 'template', 'HTMLElement'], // Safari 5.1
 	['HTMLTextAreaElement', 'textarea'],
 	['HTMLTimeElement', 'time', 'HTMLElement'], // Safari 5.1
 	['HTMLTitleElement', 'title'],
 	['HTMLTrackElement', 'track', 'HTMLElement'], // Safari 5.1
 	['HTMLUListElement', 'ul'],
-	['HTMLVideoElement', 'video'],
-	['HTMLElement', 'abbr'],
-	['HTMLElement', 'address'],
-	['HTMLElement', 'aside'],
-	['HTMLElement', 'b'],
-	['HTMLElement', 'bdi'],
-	['HTMLElement', 'bdo'],
-	['HTMLElement', 'code'],
-	['HTMLElement', 'dd'],
-	['HTMLDetailsElement', 'details', 'HTMLElement'], // Safari 5.1
-	['HTMLElement', 'dfn'],
-	['HTMLElement', 'dt'],
-	['HTMLElement', 'em'],
-	['HTMLElement', 'figcaption'],
-	['HTMLElement', 'figure'],
-	['HTMLElement', 'footer'],
-	['HTMLElement', 'header'],
-	['HTMLElement', 'hgroup'],
-	['HTMLElement', 'i'],
-	['HTMLElement', 'kbd'],
-	['HTMLElement', 'mark'],
-	['HTMLElement', 'nav'],
-	['HTMLElement', 'rp'],
-	['HTMLElement', 'rt'],
-	['HTMLElement', 'ruby'],
-	['HTMLElement', 's'],
-	['HTMLElement', 'samp'],
-	['HTMLSlotElement', 'slot', 'HTMLElement'], // Safari 5.1
-	['HTMLElement', 'small'],
-	['HTMLElement', 'strong'],
-	['HTMLElement', 'summary'],
-	['HTMLElement', 'u'],
-	['HTMLElement', 'var'],
-	['HTMLElement', 'wbr']
+	['HTMLUnknownElement', 'command'],
+	['HTMLUnknownElement', 'element'],
+	['HTMLUnknownElement', 'image'],
+	['HTMLUnknownElement', 'isindex'],
+	['HTMLUnknownElement', 'math'],
+	['HTMLUnknownElement', 'menuitem'],
+	['HTMLUnknownElement', 'rbc'],
+	['HTMLUnknownElement', 'rect'],
+	['HTMLUnknownElement', 'svg'],
+	['HTMLUnknownElement', 'use'],
+	['HTMLVideoElement', 'video']
 ];
 
 // eslint-disable-next-line consistent-return
