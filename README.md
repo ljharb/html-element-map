@@ -83,5 +83,5 @@ assert.deepEqual(
 [downloads-url]: https://npm-stat.com/charts.html?package=html-element-map
 [codecov-image]: https://codecov.io/gh/ljharb/html-element-map/branch/main/graphs/badge.svg
 [codecov-url]: https://app.codecov.io/gh/ljharb/html-element-map/
-[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/html-element-map
+[actions-image]: https://img.shields.io/github/check-runs/ljharb/html-element-map/main
 [actions-url]: https://github.com/ljharb/html-element-map/actions
