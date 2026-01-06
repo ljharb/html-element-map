@@ -78,8 +78,7 @@
 		"tape": "^5.9.0"
 	},
 	"dependencies": {
-		"array.prototype.filter": "^1.0.4",
-		"call-bind": "^1.0.8"
+		"array.prototype.filter": "^1.0.4"
 	},
 	"testling": {
 		"files": "test/index.js",

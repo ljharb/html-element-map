@@ -1,13 +1,9 @@
 'use strict';
 
-var callBound = require('call-bind/callBound');
-
-var $push = callBound('Array.prototype.push');
-
 var map = function (arr, mapper) {
 	var mapped = [];
 	for (var i = 0; i < arr.length; i += 1) {
-		$push(mapped, mapper(arr[i], i));
+		mapped[mapped.length] = mapper(arr[i], i);
 	}
 	return mapped;
 };
