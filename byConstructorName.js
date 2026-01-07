@@ -1,11 +1,13 @@
 'use strict';
 
 var filter = require('array.prototype.filter');
+var $TypeError = require('es-errors/type');
+
 var getData = require('./getData');
 
 module.exports = function byConstructorName(constructorName) {
 	if (typeof constructorName !== 'string') {
-		throw new TypeError('constructorName must be a string, got ' + typeof constructorName);
+		throw new $TypeError('constructorName must be a string, got ' + typeof constructorName);
 	}
 	var data = getData();
 	if (constructorName === 'HTMLElement') {
