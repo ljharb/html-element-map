@@ -8,8 +8,7 @@ jobs:
     with:
       range: '< 10'
       type: minors
-      after_install: sed -i.bak -e 's/var pexec = process\.execArgv/var pexec = ["--stack-size=8000"].concat(process.execArgv)/' -e 's/process\.execArgv\.concat(needExecArgv/["--stack-size=8000"].concat(process.execArgv).concat(needExecArgv/' node_modules/nyc/node_modules/spawn-wrap/shim.js
-      command: ./node_modules/.bin/nyc ./node_modules/.bin/tape 'test/**/*.js'
+      command: node --stack-size=8000 ./node_modules/.bin/nyc ./node_modules/.bin/tape 'test/**/*.js'
 
   node:
     name: 'node < 10'
