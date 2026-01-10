@@ -8,7 +8,7 @@ jobs:
     with:
       range: '< 10'
       type: minors
-      command: node --stack-size=8000 ./node_modules/.bin/nyc ./node_modules/.bin/tape 'test/**/*.js'
+      command: sed -i.bak 's/var needExecArgv = settings.execArgv || \[\]/var needExecArgv = ["--stack-size=8000"].concat(settings.execArgv || [])/' node_modules/nyc/node_modules/spawn-wrap/shim.js && ./node_modules/.bin/nyc ./node_modules/.bin/tape 'test/**/*.js'
 
   node:
     name: 'node < 10'
