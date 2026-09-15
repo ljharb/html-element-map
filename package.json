@@ -4,14 +4,7 @@
 	"description": "Look up HTML tag names via HTML Element constructors, and vice versa.",
 	"main": "index.js",
 	"exports": {
-		".": [
-			{
-				"import": "./index.mjs",
-				"require": "./index.js",
-				"default": "./index.js"
-			},
-			"./index.js"
-		],
+		".": "./index.js",
 		"./": "./index.js",
 		"./index": "./index.js",
 		"./index.js": "./index.js",
@@ -34,8 +27,7 @@
 		"prepublish": "not-in-publish || npm run prepublishOnly",
 		"pretest": "npm run lint",
 		"tests-only": "nyc tape 'test/**/*.js'",
-		"tests-esm": "nyc node test/index.mjs",
-		"test": "npm run tests-only && npm run tests-esm",
+		"test": "npm run tests-only",
 		"posttest": "npx npm@\">= 10.2\" audit --production",
 		"lint": "eslint .",
 		"version": "auto-changelog && git add CHANGELOG.md",
