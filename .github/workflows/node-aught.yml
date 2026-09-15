@@ -2,17 +2,20 @@ name: 'Tests: node.js < 10'
 
 on: [pull_request, push]
 
+permissions:
+  contents: read
+
 jobs:
   tests:
     uses: ljharb/actions/.github/workflows/node.yml@main
     with:
       range: '< 10'
       type: minors
-      command: sed -i.bak 's/var needExecArgv = settings.execArgv || \[\]/var needExecArgv = ["--stack-size=8000"].concat(settings.execArgv || [])/' node_modules/nyc/node_modules/spawn-wrap/shim.js && ./node_modules/.bin/nyc ./node_modules/.bin/tape 'test/**/*.js'
+      command: npm run tests-only
 
   node:
     name: 'node < 10'
     needs: [tests]
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo tests completed'
+      - run: true
